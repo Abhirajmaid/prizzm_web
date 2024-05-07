@@ -5,53 +5,50 @@ import Head from 'next/head';
 
 const Contact: React.FC = () => {
   return (
-    <div>
+    <section id='section' className="pt-[150px] w-full bg-black">
+       <div className=" text-white min-h-screen">
       <Head>
         <title>Contact Us</title>
-        <meta name="description" content="Contact us for any queries or feedback." />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <div className="container mx-auto py-8">
-        <h1 className="text-3xl font-bold mb-4">Contact Us</h1>
-
-        <div className="flex flex-col md:flex-row gap-8">
-          <div className="w-full md:w-1/2">
-            <form className="space-y-4">
-              <div>
-                <label htmlFor="name" className="block text-gray-700">Name</label>
-                <input type="text" id="name" name="name" className="mt-1 p-2 w-full border rounded" />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-gray-700">Email</label>
-                <input type="email" id="email" name="email" className="mt-1 p-2 w-full border rounded" />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-gray-700">Message</label>
-                <textarea id="message" name="message" rows={5} className="mt-1 p-2 w-full border rounded"></textarea>
-              </div>
-              <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Submit</button>
-            </form>
+      <div className="container mx-auto py-12 px-4">
+        <h2 className="text-3xl font-bold mb-6">Contact Us</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Contact Details */}
+          <div>
+            <ul>
+              <li className="mb-4  text-[26px]">
+                <span className="text-gray-500  ">Phone:</span> +91 9823546062
+              </li>
+              <li className="mb-4 text-[26px]">
+                <span className="text-gray-500">Address:</span> Office no. 4, Yaad Building, Lane No. 1, Sahawas Society, Karve Nagar, Pune, Maharashtra 411052
+              </li>
+              <li className="mb-4 text-[26px]">
+                <span className="text-gray-500">Email:</span> info@prizzminterriors.com
+              </li>
+            </ul>
           </div>
-          <div className="w-full md:w-1/2">
-            <div className="border p-4 rounded">
-              <h2 className="text-lg font-semibold mb-2">FAQ</h2>
-              <div className="space-y-2">
-                <div>
-                  <h3 className="text-blue-500 font-semibold">Q: How can I contact support?</h3>
-                  <p className="text-gray-600">You can contact our support team by filling out the form on this page.</p>
-                </div>
-                <div>
-                  <h3 className="text-blue-500 font-semibold">Q: What are your working hours?</h3>
-                  <p className="text-gray-600">Our support team is available from Monday to Friday, 9 AM to 6 PM.</p>
-                </div>
-                {/* Add more FAQ items here */}
+          {/* Contact Form */}
+          <div>
+            <form>
+              <div className="mb-4">
+                <label htmlFor="name" className="block text-lg font-medium">Name</label>
+                <input type="text" id="name" name="name" className="mt-1 p-2 w-full rounded-md bg-gray-800 border-none text-white" />
               </div>
-            </div>
+              <div className="mb-4">
+                <label htmlFor="email" className="block text-lg font-medium">Email</label>
+                <input type="email" id="email" name="email" className="mt-1 p-2 w-full rounded-md bg-gray-800 border-none text-white" />
+              </div>
+              <div className="mb-4">
+                <label htmlFor="message" className="block text-lg font-medium">Message</label>
+                <textarea id="message" name="message" rows={4} className="mt-1 p-2 w-full rounded-md bg-gray-800 border-none text-white"></textarea>
+              </div>
+              <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Submit</button>
+            </form>
           </div>
         </div>
       </div>
     </div>
+    </section>
   );
 };
 

@@ -1,5 +1,6 @@
 "use client";
 import headerData from "@/data/header.json";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 const HeaderComponent = () => {
@@ -10,19 +11,19 @@ const HeaderComponent = () => {
     setShowMenu((prev) => !prev);
   };
   return (
-    <header className="flex justify-between items-center px-6 absolute z-10 w-full">
-      <div className=" flex justify-between w-full items-center py-3 border-b-2 border-white">
-        <Link href="/" className="font-bebas text-white text-xl">
-          PRIZZM
+    <header className="absolute z-10 flex w-full items-center justify-between px-6">
+      <div className=" flex w-full items-center justify-between border-b-2 border-white py-3">
+        <Link href="/" className="font-bebas text-xl text-white">
+          <Image src="/images/logo.png" alt="prizzm" width={200} height={200} />
         </Link>
 
         <ul
-          className={`flex flex-col duration-300 sm:flex-row absolute right-0 bg-black w-screen h-screen sm:h-fit sm:w-fit sm:top-0 sm:relative sm:bg-transparent gap-6 justify-center items-center ${showMenu ? "top-0" : "-top-[100vh]"} `}
+          className={`absolute right-0 flex h-screen w-screen flex-col items-center justify-center gap-6 bg-black duration-300 sm:relative sm:top-0 sm:h-fit sm:w-fit sm:flex-row sm:bg-transparent ${showMenu ? "top-0" : "-top-[100vh]"} `}
         >
           {headerData.header.map((item, index) => {
             return (
               <>
-                <li className="text-white text-base uppercase">
+                <li className="text-base uppercase text-white">
                   <Link href={item.href}>{item.label}</Link>
                 </li>
               </>
@@ -32,13 +33,15 @@ const HeaderComponent = () => {
         <div>
           <button
             onClick={() => toggleMenu()}
-            className="text-white sm:hidden z-20 relative"
+            className="relative z-20 text-white sm:hidden"
           >
             {showMenu ? "Close" : "Menu"}
           </button>
-          <button className="sm:block font-bebas hidden border-2 border-white rounded-full px-3 py-1 text-white hover:bg-white hover:text-black duration-300">
-            Contact Us
-          </button>
+          <Link href="/contact-us">
+            <button className="hidden rounded-full border-2 border-white px-3 py-1 font-bebas text-white duration-300 hover:bg-white hover:text-black sm:block">
+              Contact Us
+            </button>
+          </Link>
         </div>
       </div>
     </header>

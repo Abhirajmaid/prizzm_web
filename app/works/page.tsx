@@ -75,7 +75,7 @@ const WorksPage = async () => {
                   <div className="flex flex-col my-3 sm:my-0 sm:flex-row sm:justify-between">
                     <p>{excerpt}</p>
                     <Link
-                      href={url}
+                      href="/"
                       target="_blank"
                       className={clsx(
                         "bg-black font-bebas w-fit h-fit shrink-0  border-solid px-6 py-2 rounded-full border-2 duration-300 ",
