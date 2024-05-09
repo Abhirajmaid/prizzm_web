@@ -7,7 +7,7 @@ import Link from "next/link";
 import Marquee from "react-fast-marquee";
 
 
-export const GalleryData = [
+const GalleryData = [
   {
     url : "/images/1.jpg"
   },
