@@ -5,6 +5,22 @@ import { ContentType, getServicesPage, ImageType } from "@/sanity/queries/page";
 import Image from "next/image";
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
+import { GalleryData } from "../page";
+
+const ServicesData = [
+  {
+    heading:"Interior Designs",
+    excerpt : "Lorem ipsum dolor sit amet, strong adipisicing elit, sed do emphasis tempor incididunt ut underlined et dolore strikethrough aliqua. Ut subscript ad superscript veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in link in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+  },
+  {
+    heading:"3D Designs",
+    excerpt : "Lorem ipsum dolor sit amet, strong adipisicing elit, sed do emphasis tempor incididunt ut underlined et dolore strikethrough aliqua. Ut subscript ad superscript veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in link in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+  },
+  {
+    heading:"Architecture Designs",
+    excerpt : "Lorem ipsum dolor sit amet, strong adipisicing elit, sed do emphasis tempor incididunt ut underlined et dolore strikethrough aliqua. Ut subscript ad superscript veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in link in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+  },
+]
 
 const ServicesPage = async () => {
   const data = await getServicesPage(SERVICES.PATH);
@@ -22,7 +38,7 @@ const ServicesPage = async () => {
           <h1>{Heading}</h1>
         </div>
         <div className="md:grid sm:grid-cols-2 xl:grid-cols-3 gap-3 grid grid-cols-1">
-          {Content.map((element: ContentType, index: number) => {
+          {ServicesData.map((element: any, index: number) => {
             return (
               <div
                 key={index}
@@ -46,7 +62,7 @@ const ServicesPage = async () => {
 
           <div className="col-span-1 md:col-span-3">
             <Marquee className="h-full w-full" loop={50}>
-              {Gallery.imageUrls?.map((image: ImageType, index: number) => {
+              {GalleryData.map((image: ImageType, index: number) => {
                 return (
                   <div className="h-[450px] aspect-auto w-full" key={index}>
                     <Image

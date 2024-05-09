@@ -5,6 +5,76 @@ import Image from "next/image";
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
 
+export const GalleryData = [
+  {
+    url : "/images/1.jpg"
+  },
+  {
+    url : "/images/2.jpg"
+  },
+  {
+    url : "/images/3.jpg"
+  },
+  {
+    url : "/images/5.jpeg"
+  },
+  {
+    url : "/images/6.jpg"
+  },
+  {
+    url : "/images/projectB/1.jpg"
+  },
+  {
+    url : "/images/projectB/2.jpg"
+  },
+  {
+    url : "/images/projectB/3.jpg"
+  },
+  {
+    url : "/images/projectB/4.jpg"
+  },
+  {
+    url : "/images/projectB/5.jpg"
+  },
+  {
+    url : "/images/projectB/6.jpg"
+  },
+  {
+    url : "/images/projectB/7.jpg"
+  },
+  {
+    url : "/images/projectD/6.jpg"
+  },
+  {
+    url : "/images/projectC/6.jpg"
+  },
+  {
+    url : "/images/projectC/5.jpg"
+  },
+  {
+    url : "/images/projectC/4.jpg"
+  },
+  {
+    url : "/images/projectD/2.jpg"
+  },
+  {
+    url : "/images/projectC/1.jpg"
+  },
+]
+
+const ExpertisesData = [
+  {
+    id: 1,
+    heading: "DESIGN INTERIOR",
+    url: "/images/2.jpg",
+  },
+  {
+    id: 2,
+    heading: "Architecture DESIGN",
+    url: "/images/4.jpeg"
+  }
+] 
+
 export default async function Home() {
   const data = await getHomepage();
 
@@ -18,7 +88,7 @@ export default async function Home() {
       >
         <div id="container" className=" px-6 sm:px-24 w-full h-full">
           <Image
-            src="https://images.unsplash.com/photo-1604580040660-f0a7f9abaea6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="/images/home.jpeg"
             alt="Hero Background cover"
             fill
             className="w-full h-full object-cover absolute"
@@ -94,7 +164,7 @@ export default async function Home() {
           <div className="w-full h-full items-center justify-center">
             <Marquee className="w-full h-full" autoFill speed={15}>
               <div className="flex">
-                {Gallery.imageUrls.map((image: ImageType, index: number) => {
+                {GalleryData.map((image: ImageType, index: number) => {
                   return (
                     <div key={index} className="sm:w-[33vw] h-[600px]">
                       <Image
@@ -121,7 +191,7 @@ export default async function Home() {
             <h2 className="text-5xl font-bebas">Our Expertise</h2>
           </div>
           <div className="w-full h-full gap-6 flex flex-col sm:flex-row justify-between items-center">
-            {Expertises.map((expertise: any, index: number) => {
+            {ExpertisesData.map((expertise: any, index: number) => {
               return (
                 <Link
                   key={index}
@@ -135,8 +205,8 @@ export default async function Home() {
                     <Image
                       src={expertise.url}
                       alt=""
-                      width={320}
-                      height={320}
+                      width={520}
+                      height={520}
                       className=" group-hover:scale-105 duration-300 h-full w-full object-cover"
                     />
                   </div>

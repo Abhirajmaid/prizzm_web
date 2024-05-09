@@ -3,6 +3,7 @@ export const revalidate = 0;
 import { getGalleryPage, ImageType } from "@/sanity/queries/page";
 import Image from "next/image";
 import Link from "next/link";
+import { GalleryData } from "../page";
 
 const randomColumns = () => {
   const columnSize = [
@@ -29,15 +30,15 @@ const GalleryPage = async () => {
           Our Entire works are showcased here.
         </span>
         <div className="grid-cols-1 grid-flow-row-dense gap-6 sm:grid-cols-2 md:grid-cols-4 grid">
-          {Gallery.imageUrls.map((image: ImageType, index: number) => {
+          {GalleryData.map((image: ImageType, index: number) => {
             return (
               <div key={index} className={randomColumns()}>
                 <Link href="/">
                   <Image
                     src={image.url}
                     alt=""
-                    width={420}
-                    height={240}
+                    width={820}
+                    height={440}
                     className="w-full h-full object-cover"
                   />
                 </Link>

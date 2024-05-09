@@ -7,6 +7,41 @@ import Link from "next/link";
 import React from "react";
 import Marquee from "react-fast-marquee";
 
+const WorkData = [
+  {
+    projectname: "Project A",
+    location: "Kharadi, Pune",
+    url: "https://webfudgeagency.com",
+    tagline: "Interior Design",
+    imageUrls: ["/images/projectA/1.jpeg", "/images/projectA/2.jpeg","/images/projectA/3.jpeg", "/images/projectA/4.jpg", "/images/projectA/5.jpg", "/images/projectA/6.jpg"],
+    excerpt: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries"
+  },
+  {
+    projectname: "Project B",
+    location: "Kharadi, Pune",
+    url: "https://webfudgeagency.com",
+    tagline: "Interior Design",
+    imageUrls: ["/images/projectB/1.jpg", "/images/projectB/2.jpg","/images/projectB/3.jpg", "/images/projectB/4.jpg", "/images/projectB/5.jpg", "/images/projectB/6.jpg", "/images/projectB/7.jpg", "/images/projectB/8.jpg"],
+    excerpt: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries"
+  },
+  {
+    projectname: "Project C",
+    location: "Kharadi, Pune",
+    url: "https://webfudgeagency.com",
+    tagline: "Interior Design",
+    imageUrls: ["/images/projectC/1.jpg", "/images/projectC/2.jpg","/images/projectC/3.jpg", "/images/projectC/4.jpg", "/images/projectC/5.jpg", "/images/projectC/6.jpg", "/images/projectC/7.jpg", "/images/projectC/8.jpg","/images/projectC/9.jpg", "/images/projectC/10.jpg",],
+    excerpt: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries"
+  },
+  {
+    projectname: "Project D",
+    location: "Kharadi, Pune",
+    url: "https://webfudgeagency.com",
+    tagline: "Interior Design",
+    imageUrls: ["/images/projectD/1.jpg", "/images/projectD/2.jpg","/images/projectD/3.jpg", "/images/projectD/4.jpg", "/images/projectD/5.jpg", "/images/projectD/6.jpg"],
+    excerpt: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries"
+  },
+]
+
 const WorksPage = async () => {
   const data = await getWorksPage();
 
@@ -41,7 +76,7 @@ const WorksPage = async () => {
         id="section"
         className="py-24 sm:py-24 sm:h-fit relative w-full justify-center flex flex-col items-center bg-black"
       >
-        {Content.map((project: ProjectType, index: number) => {
+        {WorkData.map((project: any, index: number) => {
           const { location, url, imageUrls, excerpt, tagline, projectname } =
             project;
 
@@ -94,18 +129,18 @@ const WorksPage = async () => {
                     speed={90}
                     pauseOnHover
                   >
-                    {imageUrls?.map((image: ImageType, index: number) => {
+                    {imageUrls?.map((image: any, index: number) => {
                       return (
                         <div
                           key={index}
-                          className="w-[88vw] overflow-hidden shrink-0 cursor-pointer flex items-center justify-center sm:w-[450px] aspect-video"
+                          className="w-[88vw] overflow-hidden shrink-0 cursor-pointer flex items-center justify-center sm:w-[700px] aspect-video"
                         >
                           <Image
                             loading="lazy"
-                            src={image?.url || ""}
+                            src={image || ""}
                             alt="Images"
-                            width={200}
-                            height={300}
+                            width={700}
+                            height={650}
                             className="h-full w-full object-cover px-1"
                           />
                         </div>
