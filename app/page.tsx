@@ -5,7 +5,21 @@ import Image from "next/image";
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
 
-export const GalleryData = [
+
+const ExpertisesData = [
+  {
+    id: 1,
+    heading: "DESIGN INTERIOR",
+    url: "/images/2.jpg",
+  },
+  {
+    id: 2,
+    heading: "Architecture DESIGN",
+    url: "/images/4.jpeg"
+  }
+]
+
+const GalleryData = [
   {
     url : "/images/1.jpg"
   },
@@ -61,20 +75,6 @@ export const GalleryData = [
     url : "/images/projectC/1.jpg"
   },
 ]
-
-const ExpertisesData = [
-  {
-    id: 1,
-    heading: "DESIGN INTERIOR",
-    url: "/images/2.jpg",
-  },
-  {
-    id: 2,
-    heading: "Architecture DESIGN",
-    url: "/images/4.jpeg"
-  }
-] 
-
 export default async function Home() {
   const data = await getHomepage();
 
